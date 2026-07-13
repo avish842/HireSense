@@ -1,0 +1,12 @@
+{
+  "name": "@autohire/scheduler",
+  "version": "1.0.0",
+  "main": "agent.js",
+  "scripts": {
+    "start": "node agent.js"
+  },
+  "dependencies": {
+    "@autohire/shared": "*",
+    "bullmq": "^4.12.0"
+  }
+}

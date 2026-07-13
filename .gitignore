@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.*
+
+# Logs
+*.log
+
+# Build output
+frontend/dist/
+
+# Generated resumes (re-created by seed script)
+scripts/resumes/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Markdown files (except README)
+DATABASE_CHOICE.md
+INTERVIEW_PREP.md
+INTERVIEW_QNA.md
+USE_CASE.md
+
+# Debug/scratch files
+scripts/debug_pdf.js
+scratch_decrypted.pdf
+
+# Lock file (optional — remove this line if you want reproducible installs)
+# package-lock.json

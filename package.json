@@ -1,0 +1,24 @@
+{
+  "name": "autohire",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "libs/*",
+    "services/*",
+    "frontend",
+    "scripts"
+  ],
+  "scripts": {
+    "start:infra": "docker-compose up -d",
+    "stop:infra": "docker-compose down",
+    "start:services": "concurrently -n \"auth,ingestion,pre-filter,ats-scorer,extraction,scoring,scheduler,notification\" -c \"blue,green,magenta,yellow,cyan,white,gray,red\" \"npm start -w services/auth\" \"npm start -w services/ingestion\" \"npm start -w services/pre-filter\" \"npm start -w services/ats-scorer\" \"npm start -w services/extraction\" \"npm start -w services/scoring\" \"npm start -w services/scheduler\" \"npm start -w services/notification\"",
+    "start:proxy": "node scripts/proxy.js",
+    "start:frontend": "npm run dev -w frontend",
+    "start:all": "concurrently -n \"services,frontend\" -c \"magenta,cyan\" \"npm run start:services\" \"npm run start:frontend\"",
+    "start:tunnel": "concurrently -n \"services,frontend,proxy\" -c \"magenta,cyan,yellow\" \"npm run start:services\" \"npm run start:frontend\" \"npm run start:proxy\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "http-proxy": "^1.18.1"
+  }
+}
