@@ -1,4 +1,4 @@
-# AutoHire
+# HireSense
 
 Production-grade autonomous AI recruitment pipeline.
 

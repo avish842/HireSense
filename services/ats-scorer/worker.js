@@ -15,7 +15,7 @@ const parsePDFWithRetry = async (buffer, retries = 5, delay = 200) => {
 const { Queue } = require('bullmq');
 const Groq = require('groq-sdk');
 const { z } = require('zod');
-const { logger, db, createConsumer, publishEvent, checkIdempotency, markProcessed, generateIdempotencyKey, connectRedis, connectProducer } = require('@autohire/shared');
+const { logger, db, createConsumer, publishEvent, checkIdempotency, markProcessed, generateIdempotencyKey, connectRedis, connectProducer } = require('@hiresense/shared');
 
 const minioClient = new Client({
   endPoint: process.env.MINIO_ENDPOINT || 'localhost',

@@ -4,7 +4,7 @@ const cors = require('cors');
 const multer = require('multer');
 const crypto = require('crypto');
 const { Client } = require('minio');
-const { logger, db, redisClient, publishEvent, connectRedis, connectProducer, verifyToken } = require('@autohire/shared');
+const { logger, db, redisClient, publishEvent, connectRedis, connectProducer, verifyToken } = require('@hiresense/shared');
 
 const app = express();
 app.use(cors({

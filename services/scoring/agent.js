@@ -1,7 +1,7 @@
 require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env') });
 const crypto = require('crypto');
 const Groq = require('groq-sdk');
-const { logger, db, redisClient, createConsumer, publishEvent, checkIdempotency, markProcessed, generateIdempotencyKey, connectRedis, connectProducer } = require('@autohire/shared');
+const { logger, db, redisClient, createConsumer, publishEvent, checkIdempotency, markProcessed, generateIdempotencyKey, connectRedis, connectProducer } = require('@hiresense/shared');
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 

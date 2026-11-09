@@ -2,7 +2,7 @@ require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env'
 const crypto = require('crypto');
 const { Queue } = require('bullmq');
 const Groq = require('groq-sdk');
-const { logger, db, createConsumer, publishEvent, checkIdempotency, markProcessed, generateIdempotencyKey, connectRedis, redisClient, connectProducer } = require('@autohire/shared');
+const { logger, db, createConsumer, publishEvent, checkIdempotency, markProcessed, generateIdempotencyKey, connectRedis, redisClient, connectProducer } = require('@hiresense/shared');
 
 const emailQueue = new Queue('emailQueue', {
   connection: { host: process.env.REDIS_HOST || 'localhost', port: parseInt(process.env.REDIS_PORT || '6379') }

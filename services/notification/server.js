@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const express = require('express');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
-const { logger, redisClient, connectRedis } = require('@autohire/shared');
+const { logger, redisClient, connectRedis } = require('@hiresense/shared');
 
 const app = express();
 const httpServer = createServer(app);
@@ -76,7 +76,7 @@ const sendOrSimulateEmail = async (to, subject, text, html, icalEventContent) =>
 
   try {
     const mailOptions = {
-      from: '"AutoHire" <no-reply@autohire.com>',
+      from: '"HireSense" <no-reply@autohire.com>',
       to,
       subject,
       text,
@@ -149,13 +149,13 @@ Meeting Link: ${data.meeting_link}
     `;
     const ical = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//AutoHire//EN
+PRODID:-//HireSense//EN
 BEGIN:VEVENT
 UID:${data.candidate_id}@autohire.com
 DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z
 DTSTART:${new Date(data.scheduled_at).toISOString().replace(/[-:]/g, '').split('.')[0]}Z
 DTEND:${new Date(new Date(data.scheduled_at).getTime() + 60*60*1000).toISOString().replace(/[-:]/g, '').split('.')[0]}Z
-SUMMARY:AutoHire Interview
+SUMMARY:HireSense Interview
 DESCRIPTION:Join here: ${data.meeting_link}
 END:VEVENT
 END:VCALENDAR`;

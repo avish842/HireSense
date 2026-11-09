@@ -334,7 +334,7 @@ function App() {
         <div className="auth-card">
           <div className="auth-brand">
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 12 }}><Logo /></div>
-            <div className="auth-brand-name">Auto<span>Hire</span></div>
+            <div className="auth-brand-name">Hire<span>Sense</span></div>
             <div className="auth-brand-tagline">Autonomous Recruitment Pipeline</div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
@@ -397,7 +397,7 @@ function App() {
       <header className="topbar">
         <div className="topbar-brand">
           <Logo />
-          <div className="topbar-logo">Auto<span>Hire</span></div>
+          <div className="topbar-logo">Hire<span>Sense</span></div>
         </div>
         <div className="topbar-right">
           <div className="topbar-user">

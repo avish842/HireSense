@@ -5,7 +5,7 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { z } = require('zod');
-const { logger, db, verifyToken, requireRole } = require('@autohire/shared');
+const { logger, db, verifyToken, requireRole } = require('@hiresense/shared');
 
 const app = express();
 app.use(express.json());
